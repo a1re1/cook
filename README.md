@@ -69,7 +69,7 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 5. Initialize Convex (follow the prompts to set up your project):
 
 ```bash
-bunx convex dev
+npx convex dev
 ```
 
 6. In a separate terminal, run the development server:

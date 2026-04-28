@@ -25,7 +25,7 @@ A Next.js cookbook application where users can create, publish, and search throu
 
 ### Prerequisites
 
-- Node.js 18+ installed
+- [Bun](https://bun.com) 1.0+ installed
 - A Convex account (sign up at https://convex.dev)
 - A WorkOS account (sign up at https://workos.com)
 - An UploadThing account (sign up at https://uploadthing.com)
@@ -36,7 +36,7 @@ A Next.js cookbook application where users can create, publish, and search throu
 2. Install dependencies:
 
 ```bash
-npm install
+bun install
 ```
 
 3. Set up your environment variables by copying `.env.local.example` to `.env.local`:
@@ -75,7 +75,7 @@ npx convex dev
 6. In a separate terminal, run the development server:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 7. Open [http://localhost:3000](http://localhost:3000) in your browser
@@ -104,10 +104,10 @@ npm run dev
 
 ## Development
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+- `bun run dev` - Start development server
+- `bun run build` - Build for production
+- `bun run start` - Start production server
+- `bun run lint` - Run ESLint
 
 ## License
 

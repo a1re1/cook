@@ -5,9 +5,10 @@ export function extractSearchableText(blocks: Block[]): string {
     let text = "";
 
     // Extract text content from block
-    if (block.content) {
-      if (Array.isArray(block.content)) {
-        text += block.content
+    const content = (block as any).content;
+    if (content) {
+      if (Array.isArray(content)) {
+        text += content
           .map((item: any) => {
             if (typeof item === "string") return item;
             if (item.type === "text" && item.text) return item.text;
@@ -15,8 +16,8 @@ export function extractSearchableText(blocks: Block[]): string {
             return "";
           })
           .join(" ");
-      } else if (typeof block.content === "string") {
-        text += block.content;
+      } else if (typeof content === "string") {
+        text += content;
       }
     }
 

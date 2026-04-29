@@ -195,11 +195,12 @@ export const getRecipeBySlug = query({
     let recipe;
 
     if (args.userId) {
+      const userId = args.userId;
       // Get by user and slug
       recipe = await ctx.db
         .query("recipes")
         .withIndex("by_user_and_slug", (q) =>
-          q.eq("userId", args.userId).eq("slug", args.slug)
+          q.eq("userId", userId).eq("slug", args.slug)
         )
         .first();
     } else {

@@ -1,5 +1,5 @@
 import { createUploadthing, type FileRouter } from "uploadthing/next";
-import { getUser } from "@workos-inc/authkit-nextjs";
+import { withAuth } from "@workos-inc/authkit-nextjs";
 
 const f = createUploadthing();
 
@@ -11,7 +11,7 @@ export const ourFileRouter = {
     },
   })
     .middleware(async () => {
-      const { user } = await getUser();
+      const { user } = await withAuth();
       if (!user) throw new Error("Unauthorized");
 
       return { userId: user.id };

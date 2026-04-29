@@ -1,12 +1,12 @@
 "use client";
 
-import { useUser } from "@workos-inc/authkit-nextjs";
+import { useAuth as useAuthKit } from "@workos-inc/authkit-nextjs/components";
 import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { useEffect } from "react";
 
 export function useAuth() {
-  const { user, isLoading } = useUser();
+  const { user, loading: isLoading } = useAuthKit();
   const getOrCreateUser = useMutation(api.users.getOrCreateUser);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export function useAuth() {
         name: user.firstName && user.lastName
           ? `${user.firstName} ${user.lastName}`
           : user.email.split('@')[0],
-        avatarUrl: user.profilePictureUrl,
+        avatarUrl: user.profilePictureUrl ?? undefined,
       });
     }
   }, [user, isLoading, getOrCreateUser]);

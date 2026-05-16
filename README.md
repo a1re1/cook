@@ -1,6 +1,6 @@
 # Cook - Your Personal Cookbook
 
-A Next.js cookbook application where users can create, publish, and search through recipes with a flexible Notion-like editing experience.
+A Next.js cookbook application where users can create, publish, and search through recipes with a flexible, Notion-like editing experience.
 
 ## Tech Stack
 
